@@ -4,9 +4,10 @@ import { useAuth } from '../context/AuthContext'
 import { useLanguage } from '../context/LanguageContext'
 import { translations } from '../utils/translations'
 
-export default function Login() {
+export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const auth = useAuth()
@@ -19,10 +20,10 @@ export default function Login() {
     setLoading(true)
 
     try {
-      await auth.login(email, password)
+      await auth.signup(email, password, name)
       navigate('/dashboard', { replace: true })
     } catch (err) {
-      setError(t(translations.login.error))
+      setError(err.message || 'Signup failed. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -34,11 +35,20 @@ export default function Login() {
         <header className="dashboard-header">
           <div>
             <h1>{t(translations.login.title)}</h1>
-            <p>{t(translations.login.subtitle)}</p>
+            <p>{t(translations.login.createAccount)}</p>
           </div>
         </header>
 
         <form onSubmit={handleSubmit} className="form-grid">
+          <label>
+            {t(translations.login.name)}
+            <input
+              type="text"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              placeholder="John Doe"
+            />
+          </label>
           <label>
             {t(translations.login.email)}
             <input
@@ -56,16 +66,17 @@ export default function Login() {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               required
+              minLength={6}
               placeholder="••••••••"
             />
           </label>
           {error && <div className="error-message">{error}</div>}
           <button type="submit" className="primary-button" disabled={loading}>
-            {loading ? t(translations.login.signingIn) : t(translations.login.signIn)}
+            {loading ? t(translations.login.signingUp) : t(translations.login.signUp)}
           </button>
           <div className="auth-link">
-            {t(translations.login.noAccount)}{' '}
-            <Link to="/signup">{t(translations.login.signUp)}</Link>
+            {t(translations.login.haveAccount)}{' '}
+            <Link to="/login">{t(translations.login.backToLogin)}</Link>
           </div>
         </form>
       </div>

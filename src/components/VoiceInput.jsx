@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react'
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../utils/translations'
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition || null
 
-export default function VoiceInput({ onResult }) {
+export default function VoiceInput({ onResult, language: propLanguage }) {
   const [listening, setListening] = useState(false)
   const [supported, setSupported] = useState(Boolean(SpeechRecognition))
+  const { language: contextLanguage, t } = useLanguage()
+  
+  const language = propLanguage || contextLanguage
 
   useEffect(() => {
     setSupported(Boolean(SpeechRecognition))
@@ -17,7 +22,7 @@ export default function VoiceInput({ onResult }) {
     }
 
     const recognition = new SpeechRecognition()
-    recognition.lang = 'en-US'
+    recognition.lang = language === 'hi' ? 'hi-IN' : 'en-US'
     recognition.interimResults = false
     recognition.maxAlternatives = 1
 
@@ -54,7 +59,7 @@ export default function VoiceInput({ onResult }) {
       onClick={handleVoice}
       aria-label="Start voice input"
     >
-      {listening ? 'Listening…' : 'Use voice'}
+      {listening ? `🎤 ${t(translations.chat.listening)}` : `🎤 ${t(translations.chat.voice)}`}
     </button>
   )
 }

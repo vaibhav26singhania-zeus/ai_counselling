@@ -1,0 +1,74 @@
+{
+  "financial_concepts": [
+    {
+      "id": "sip_basics",
+      "topic": "SIP",
+      "keywords": ["sip", "systematic investment plan", "mutual fund", "monthly investment"],
+      "content_en": "SIP (Systematic Investment Plan) is a method of investing in mutual funds where you invest a fixed amount regularly (monthly/quarterly). Benefits include: rupee cost averaging, disciplined investing, power of compounding, and flexibility to start with small amounts (as low as ₹500).",
+      "content_hi": "SIP (सिस्टमैटिक इन्वेस्टमेंट प्लान) म्यूचुअल फंड में निवेश करने का एक तरीका है जहां आप नियमित रूप से (मासिक/त्रैमासिक) एक निश्चित राशि निवेश करते हैं। लाभ: रुपये की औसत लागत, अनुशासित निवेश, चक्रवृद्धि की शक्ति, और छोटी राशि (₹500 से) से शुरू करने की सुविधा।"
+    },
+    {
+      "id": "savings_tips",
+      "topic": "Savings",
+      "keywords": ["save", "saving", "बचत", "money saving", "budget"],
+      "content_en": "Effective saving tips: 1) Follow 50-30-20 rule (50% needs, 30% wants, 20% savings), 2) Automate savings with auto-debit, 3) Cut unnecessary subscriptions, 4) Use cashback and rewards, 5) Create emergency fund (6 months expenses), 6) Track expenses daily.",
+      "content_hi": "प्रभावी बचत टिप्स: 1) 50-30-20 नियम का पालन करें (50% जरूरतें, 30% इच्छाएं, 20% बचत), 2) ऑटो-डेबिट से बचत स्वचालित करें, 3) अनावश्यक सब्सक्रिप्शन काटें, 4) कैशबैक और रिवॉर्ड का उपयोग करें, 5) आपातकालीन फंड बनाएं (6 महीने का खर्च), 6) दैनिक खर्चों को ट्रैक करें।"
+    },
+    {
+      "id": "home_loan",
+      "topic": "Home Loan",
+      "keywords": ["home loan", "housing loan", "mortgage", "emi", "होम लोन"],
+      "content_en": "Home Loan Tips: 1) Compare interest rates from multiple banks, 2) Check your credit score (750+ is good), 3) Save 20-30% down payment, 4) Consider loan tenure carefully (longer = lower EMI but higher interest), 5) Check for hidden charges, 6) Opt for floating rate in declining interest scenario.",
+      "content_hi": "होम लोन टिप्स: 1) कई बैंकों से ब्याज दरों की तुलना करें, 2) अपना क्रेडिट स्कोर जांचें (750+ अच्छा है), 3) 20-30% डाउन पेमेंट बचाएं, 4) लोन अवधि सावधानी से चुनें (लंबी = कम EMI लेकिन अधिक ब्याज), 5) छिपे हुए शुल्क जांचें, 6) घटती ब्याज दर में फ्लोटिंग रेट चुनें।"
+    },
+    {
+      "id": "tax_saving",
+      "topic": "Tax Saving",
+      "keywords": ["tax", "80c", "deduction", "tax saving", "टैक्स बचत"],
+      "content_en": "Tax Saving Options: 1) Section 80C: ELSS, PPF, EPF, Life Insurance (up to ₹1.5 lakh), 2) Section 80D: Health Insurance (₹25,000-₹50,000), 3) Section 80CCD(1B): NPS (additional ₹50,000), 4) HRA exemption for rent, 5) Home loan interest deduction (₹2 lakh), 6) Education loan interest deduction.",
+      "content_hi": "टैक्स बचत विकल्प: 1) धारा 80C: ELSS, PPF, EPF, जीवन बीमा (₹1.5 लाख तक), 2) धारा 80D: स्वास्थ्य बीमा (₹25,000-₹50,000), 3) धारा 80CCD(1B): NPS (अतिरिक्त ₹50,000), 4) किराए के लिए HRA छूट, 5) होम लोन ब्याज कटौती (₹2 लाख), 6) शिक्षा ऋण ब्याज कटौती।"
+    },
+    {
+      "id": "emergency_fund",
+      "topic": "Emergency Fund",
+      "keywords": ["emergency", "emergency fund", "आपातकालीन फंड", "contingency"],
+      "content_en": "Emergency Fund: A savings buffer for unexpected expenses. Ideal size: 6-12 months of expenses. Keep it in: liquid funds, savings account, or short-term FDs. Don't invest in stocks or long-term instruments. Build gradually: start with 1 month, then increase.",
+      "content_hi": "आपातकालीन फंड: अप्रत्याशित खर्चों के लिए बचत बफर। आदर्श आकार: 6-12 महीने का खर्च। इसे रखें: लिक्विड फंड, बचत खाता, या अल्पकालिक FD में। शेयरों या दीर्घकालिक साधनों में निवेश न करें। धीरे-धीरे बनाएं: 1 महीने से शुरू करें, फिर बढ़ाएं।"
+    },
+    {
+      "id": "credit_score",
+      "topic": "Credit Score",
+      "keywords": ["credit score", "cibil", "credit rating", "क्रेडिट स्कोर"],
+      "content_en": "Credit Score: A 3-digit number (300-900) indicating creditworthiness. Good score: 750+. Factors: payment history (35%), credit utilization (30%), credit age (15%), credit mix (10%), new credit (10%). Improve by: paying on time, keeping utilization below 30%, not closing old cards.",
+      "content_hi": "क्रेडिट स्कोर: साख योग्यता दर्शाने वाला 3-अंकीय नंबर (300-900)। अच्छा स्कोर: 750+। कारक: भुगतान इतिहास (35%), क्रेडिट उपयोग (30%), क्रेडिट आयु (15%), क्रेडिट मिश्रण (10%), नया क्रेडिट (10%)। सुधार: समय पर भुगतान, 30% से कम उपयोग, पुराने कार्ड बंद न करें।"
+    },
+    {
+      "id": "mutual_funds",
+      "topic": "Mutual Funds",
+      "keywords": ["mutual fund", "mf", "equity", "debt", "म्यूचुअल फंड"],
+      "content_en": "Mutual Funds: Pooled investment managed by professionals. Types: Equity (high risk, high return), Debt (low risk, stable return), Hybrid (balanced). Choose based on: risk appetite, investment horizon, financial goals. Start with index funds for beginners.",
+      "content_hi": "म्यूचुअल फंड: पेशेवरों द्वारा प्रबंधित संयुक्त निवेश। प्रकार: इक्विटी (उच्च जोखिम, उच्च रिटर्न), डेट (कम जोखिम, स्थिर रिटर्न), हाइब्रिड (संतुलित)। चुनें: जोखिम क्षमता, निवेश अवधि, वित्तीय लक्ष्यों के आधार पर। शुरुआती लोगों के लिए इंडेक्स फंड से शुरू करें।"
+    },
+    {
+      "id": "fixed_deposit",
+      "topic": "Fixed Deposit",
+      "keywords": ["fd", "fixed deposit", "फिक्स्ड डिपॉजिट", "term deposit"],
+      "content_en": "Fixed Deposit (FD): Safe investment with guaranteed returns. Interest rates: 5-7% typically. Features: capital protection, fixed tenure (7 days to 10 years), premature withdrawal allowed (with penalty). Good for: short-term goals, risk-averse investors. Tax: interest is taxable.",
+      "content_hi": "फिक्स्ड डिपॉजिट (FD): गारंटीड रिटर्न के साथ सुरक्षित निवेश। ब्याज दरें: आमतौर पर 5-7%। विशेषताएं: पूंजी सुरक्षा, निश्चित अवधि (7 दिन से 10 साल), समय से पहले निकासी (जुर्माने के साथ)। अच्छा: अल्पकालिक लक्ष्य, जोखिम से बचने वाले निवेशक। कर: ब्याज कर योग्य है।"
+    },
+    {
+      "id": "insurance",
+      "topic": "Insurance",
+      "keywords": ["insurance", "life insurance", "health insurance", "बीमा"],
+      "content_en": "Insurance Basics: Life Insurance: term plan (pure protection, cheapest), endowment (savings + insurance). Health Insurance: minimum ₹5 lakh cover, family floater option, check waiting periods and exclusions. Buy early for lower premiums. Don't mix insurance with investment.",
+      "content_hi": "बीमा मूल बातें: जीवन बीमा: टर्म प्लान (शुद्ध सुरक्षा, सबसे सस्ता), एंडोमेंट (बचत + बीमा)। स्वास्थ्य बीमा: न्यूनतम ₹5 लाख कवर, फैमिली फ्लोटर विकल्प, प्रतीक्षा अवधि और बहिष्करण जांचें। कम प्रीमियम के लिए जल्दी खरीदें। बीमा को निवेश के साथ न मिलाएं।"
+    },
+    {
+      "id": "retirement_planning",
+      "topic": "Retirement Planning",
+      "keywords": ["retirement", "pension", "nps", "रिटायरमेंट", "पेंशन"],
+      "content_en": "Retirement Planning: Start early to leverage compounding. Target: 25-30x annual expenses. Instruments: NPS (tax benefits), PPF, EPF, mutual funds, real estate. Diversify across asset classes. Review and rebalance annually. Consider inflation (6-7% annually).",
+      "content_hi": "रिटायरमेंट प्लानिंग: चक्रवृद्धि का लाभ उठाने के लिए जल्दी शुरू करें। लक्ष्य: वार्षिक खर्च का 25-30 गुना। साधन: NPS (कर लाभ), PPF, EPF, म्यूचुअल फंड, रियल एस्टेट। परिसंपत्ति वर्गों में विविधता लाएं। वार्षिक समीक्षा और पुनर्संतुलन। मुद्रास्फीति (वार्षिक 6-7%) पर विचार करें।"
+    }
+  ]
+}

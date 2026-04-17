@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "created": "2026-04-17T17:07:31.752Z",
+    "total_documents": 9,
+    "total_size": 10147
+  },
+  "documents": [
+    {
+      "id": "chunk_0",
+      "text": "Financial Planning Guide\r\n\r\nChapter 1: Investment Basics\r\n\r\nInvesting is the act of allocating resources, usually money, with the expectation of generating income or profit. The key to successful investing is understanding different investment vehicles and choosing the ones that align with your financial goals and risk tolerance.\r\n\r\nStocks represent ownership in a company. When you buy stocks, you become a shareholder and own a portion of that company. Stock prices fluctuate based on company performance, market conditions, and investor sentiment. Historically, stocks have provided higher returns than other asset classes over the long term, but they also come with higher volatility and risk.\r\n\r\nBonds are debt instruments where you lend money to a government or corporation in exchange for periodic interest payments and the return of principal at maturity. Bonds are generally considered safer than stocks but offer lower potential returns. Government bonds are typically the safest, while c",
+      "keywords": [
+        "stocks",
+        "company",
+        "bonds",
+        "financial",
+        "investment",
+        "investing",
+        "money",
+        "risk",
+        "higher",
+        "returns"
+      ],
+      "start": 0,
+      "end": 1000,
+      "length": 1000
+    },
+    {
+      "id": "chunk_1",
+      "text": "riodic interest payments and the return of principal at maturity. Bonds are generally considered safer than stocks but offer lower potential returns. Government bonds are typically the safest, while corporate bonds carry more risk but offer higher yields.\r\n\r\nMutual funds pool money from multiple investors to invest in a diversified portfolio of stocks, bonds, or other securities. They are managed by professional fund managers who make investment decisions on behalf of investors. Mutual funds offer instant diversification and professional management, making them suitable for beginners.\r\n\r\nChapter 2: Retirement Planning\r\n\r\nRetirement planning is crucial for ensuring financial security in your later years. The earlier you start, the more time your money has to grow through compound interest. A general rule of thumb is to save at least 15% of your pre-tax income for retirement.\r\n\r\nThe National Pension System (NPS) is a government-sponsored retirement savings scheme in India. It offers tax",
+      "keywords": [
+        "bonds",
+        "retirement",
+        "offer",
+        "your",
+        "interest",
+        "stocks",
+        "government",
+        "more",
+        "mutual",
+        "funds"
+      ],
+      "start": 800,
+      "end": 1800,
+      "length": 999
+    },
+    {
+      "id": "chunk_2",
+      "text": "A general rule of thumb is to save at least 15% of your pre-tax income for retirement.\r\n\r\nThe National Pension System (NPS) is a government-sponsored retirement savings scheme in India. It offers tax benefits under Section 80CCD and allows you to build a retirement corpus through regular contributions. NPS invests in a mix of equity, corporate bonds, and government securities based on your chosen asset allocation.\r\n\r\nEmployee Provident Fund (EPF) is a mandatory retirement savings scheme for salaried employees in India. Both employer and employee contribute 12% of the basic salary to the EPF account. The accumulated amount, along with interest, is available at retirement or under specific circumstances like buying a house or medical emergencies.\r\n\r\nPublic Provident Fund (PPF) is a long-term savings scheme backed by the government. It offers attractive interest rates, tax benefits under Section 80C, and the maturity amount is tax-free. The lock-in period is 15 years, making it ideal for",
+      "keywords": [
+        "retirement",
+        "government",
+        "savings",
+        "scheme",
+        "under",
+        "your",
+        "india",
+        "offers",
+        "benefits",
+        "section"
+      ],
+      "start": 1600,
+      "end": 2600,
+      "length": 999
+    },
+    {
+      "id": "chunk_3",
+      "text": "savings scheme backed by the government. It offers attractive interest rates, tax benefits under Section 80C, and the maturity amount is tax-free. The lock-in period is 15 years, making it ideal for long-term retirement planning.\r\n\r\nChapter 3: Tax Planning\r\n\r\nTax planning involves organizing your finances to minimize tax liability legally. Understanding various tax-saving instruments and deductions can significantly reduce your tax burden.\r\n\r\nSection 80C of the Income Tax Act allows deductions up to ₹1.5 lakh on investments in specified instruments like ELSS, PPF, EPF, life insurance premiums, and principal repayment of home loans. This is the most commonly used tax-saving provision.\r\n\r\nSection 80D provides deductions for health insurance premiums. You can claim up to ₹25,000 for self, spouse, and children, and an additional ₹25,000 for parents (₹50,000 if parents are senior citizens). Preventive health check-ups up to ₹5,000 are also covered.\r\n\r\nSection 80CCD(1B) offers an additional",
+      "keywords": [
+        "section",
+        "planning",
+        "deductions",
+        "offers",
+        "your",
+        "saving",
+        "instruments",
+        "insurance",
+        "premiums",
+        "health"
+      ],
+      "start": 2400,
+      "end": 3400,
+      "length": 999
+    },
+    {
+      "id": "chunk_4",
+      "text": "ouse, and children, and an additional ₹25,000 for parents (₹50,000 if parents are senior citizens). Preventive health check-ups up to ₹5,000 are also covered.\r\n\r\nSection 80CCD(1B) offers an additional deduction of ₹50,000 for contributions to NPS, over and above the ₹1.5 lakh limit under Section 80C. This makes NPS one of the most tax-efficient retirement savings options.\r\n\r\nHome loan interest payments are deductible under Section 24(b) up to ₹2 lakh per year for self-occupied property. For let-out property, there is no upper limit on interest deduction. This makes home loans attractive from a tax perspective.\r\n\r\nChapter 4: Emergency Fund\r\n\r\nAn emergency fund is a financial safety net for unexpected expenses like medical emergencies, job loss, or urgent home repairs. Financial experts recommend maintaining 6-12 months of living expenses in an easily accessible account.\r\n\r\nThe emergency fund should be kept in liquid instruments like savings accounts, liquid mutual funds, or short-term f",
+      "keywords": [
+        "section",
+        "home",
+        "emergency",
+        "fund",
+        "additional",
+        "parents",
+        "deduction",
+        "lakh",
+        "limit",
+        "under"
+      ],
+      "start": 3200,
+      "end": 4200,
+      "length": 1000
+    },
+    {
+      "id": "chunk_5",
+      "text": "mmend maintaining 6-12 months of living expenses in an easily accessible account.\r\n\r\nThe emergency fund should be kept in liquid instruments like savings accounts, liquid mutual funds, or short-term fixed deposits. The goal is not to maximize returns but to ensure quick access when needed. Avoid investing emergency funds in stocks or long-term instruments.\r\n\r\nBuilding an emergency fund requires discipline. Start by setting aside a small percentage of your income each month. Automate the process through standing instructions to transfer money to a separate savings account. Gradually increase the amount until you reach your target.\r\n\r\nChapter 5: Insurance Planning\r\n\r\nInsurance is a crucial component of financial planning that protects you and your family from financial hardships due to unforeseen events.\r\n\r\nTerm life insurance provides pure life cover without any investment component. It is the most affordable type of life insurance and offers high coverage at low premiums. The sum assur",
+      "keywords": [
+        "insurance",
+        "emergency",
+        "term",
+        "your",
+        "life",
+        "account",
+        "fund",
+        "liquid",
+        "instruments",
+        "savings"
+      ],
+      "start": 4000,
+      "end": 5000,
+      "length": 1000
+    },
+    {
+      "id": "chunk_6",
+      "text": "eseen events.\r\n\r\nTerm life insurance provides pure life cover without any investment component. It is the most affordable type of life insurance and offers high coverage at low premiums. The sum assured is paid to nominees in case of the policyholder's death during the policy term.\r\n\r\nHealth insurance covers medical expenses for hospitalization, surgeries, and treatments. With rising healthcare costs, adequate health insurance is essential. Look for policies with minimum ₹5 lakh coverage, cashless hospitalization facility, and coverage for pre-existing diseases after waiting period.\r\n\r\nCritical illness insurance provides a lump sum payment upon diagnosis of specified critical illnesses like cancer, heart attack, or stroke. This money can be used for treatment, recovery, or to replace lost income during the illness period.\r\n\r\nChapter 6: Goal-Based Investing\r\n\r\nGoal-based investing involves identifying specific financial goals and creating investment strategies to achieve them. Different",
+      "keywords": [
+        "insurance",
+        "life",
+        "coverage",
+        "term",
+        "provides",
+        "investment",
+        "during",
+        "health",
+        "hospitalization",
+        "period"
+      ],
+      "start": 4800,
+      "end": 5800,
+      "length": 1000
+    },
+    {
+      "id": "chunk_7",
+      "text": "income during the illness period.\r\n\r\nChapter 6: Goal-Based Investing\r\n\r\nGoal-based investing involves identifying specific financial goals and creating investment strategies to achieve them. Different goals require different investment approaches based on time horizon and risk tolerance.\r\n\r\nShort-term goals (1-3 years) like vacation, buying gadgets, or emergency fund should be invested in low-risk instruments like liquid funds, short-term FDs, or debt mutual funds. Capital preservation is more important than high returns for short-term goals.\r\n\r\nMedium-term goals (3-7 years) like buying a car, down payment for house, or child's education can be invested in balanced funds or a mix of debt and equity. This provides better returns than pure debt while managing risk through diversification.\r\n\r\nLong-term goals (7+ years) like retirement, child's higher education, or wealth creation should have higher equity allocation. Equity investments have historically provided superior returns over long",
+      "keywords": [
+        "goals",
+        "term",
+        "like",
+        "based",
+        "risk",
+        "short",
+        "years",
+        "funds",
+        "debt",
+        "returns"
+      ],
+      "start": 5600,
+      "end": 6600,
+      "length": 1000
+    },
+    {
+      "id": "chunk_8",
+      "text": "Long-term goals (7+ years) like retirement, child's higher education, or wealth creation should have higher equity allocation. Equity investments have historically provided superior returns over long periods, and the extended time horizon helps ride out market volatility.\r\n\r\nThis is a sample document to demonstrate the document processing system. In a real scenario, your 35MB file would contain much more detailed information across hundreds of pages.",
+      "keywords": [
+        "long",
+        "higher",
+        "have",
+        "equity",
+        "document",
+        "term",
+        "goals",
+        "years",
+        "like",
+        "retirement"
+      ],
+      "start": 6400,
+      "end": 6857,
+      "length": 454
+    }
+  ]
+}
