@@ -1,29 +1,33 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
+import { useLanguage } from '../context/LanguageContext'
 import { sendChatMessage } from '../services/api'
 import VoiceInput from '../components/VoiceInput'
-
-const initialMessages = [
-  {
-    id: 'welcome',
-    role: 'assistant',
-    text: 'नमस्ते! मैं ArthBot हूँ। अपनी बचत, लक्ष्य या निवेश के बारे में पूछें, मैं आपकी मदद करूँगा।',
-  },
-]
-
-const quickPrompts = [
-  'SIP क्या है?',
-  'बचत कैसे करें?',
-  'Home Loan tips',
-  'Tax saving ideas',
-]
+import { useSpeech } from '../hooks/useSpeech'
+import { translations } from '../utils/translations'
 
 export default function Chat() {
-  const [messages, setMessages] = useState(initialMessages)
+  const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
+  const [autoSpeak, setAutoSpeak] = useState(true)
   const { authToken } = useAuth()
+  const { language, t } = useLanguage()
+  const { speak, stop, speaking, supported: speechSupported } = useSpeech()
+
+  // Update welcome message when language changes
+  useEffect(() => {
+    setMessages([
+      {
+        id: 'welcome',
+        role: 'assistant',
+        text: t(translations.chat.welcome),
+      },
+    ])
+  }, [language])
+
+  const quickPrompts = translations.quickPrompts[language]
 
   const appendMessage = (message) => {
     setMessages((current) => [...current, message])
@@ -46,14 +50,46 @@ export default function Chat() {
     setError('')
 
     try {
-      const response = await sendChatMessage(trimmed, authToken)
+      const response = await sendChatMessage(trimmed, authToken, language)
+      const assistantText = response?.answer || t(translations.chat.noResponse)
+      
       appendMessage({
         id: `assistant-${Date.now()}`,
         role: 'assistant',
-        text: response?.answer || 'माफ़ कीजिए, सर्वर से कोई उत्तर नहीं मिला।',
+        text: assistantText,
+        ragUsed: response?.rag_used,
+        sources: response?.sources
       })
+
+      // Auto-speak the response if enabled
+      if (autoSpeak && speechSupported) {
+        speak(assistantText, language === 'hi' ? 'hi-IN' : 'en-US')
+      }
     } catch (err) {
-      setError('मैसेज भेजने में असफल। कृपया फिर से प्रयास करें।')
+      console.error('Chat error:', err)
+      let errorMsg = t(translations.chat.errorSending)
+      
+      if (err.response) {
+        console.error('Error response:', err.response.data)
+        
+        // Check for auth errors
+        if (err.response.status === 401 || err.response.status === 403) {
+          errorMsg = t(translations.chat.errorAuth)
+          // Logout will be handled by axios interceptor
+        } else {
+          errorMsg = `Error: ${err.response.data.error || err.response.data.details || 'Unknown error'}`
+        }
+      } else if (err.request) {
+        errorMsg = t(translations.chat.errorConnection)
+      }
+      
+      setError(errorMsg)
+      
+      appendMessage({
+        id: `error-${Date.now()}`,
+        role: 'assistant',
+        text: errorMsg,
+      })
     } finally {
       setSending(false)
     }
@@ -74,23 +110,33 @@ export default function Chat() {
     <section className="page chat-page">
       <div className="mobile-panel">
         <header className="dashboard-header">
-          <button type="button" className="back-button">←</button>
+          <button type="button" className="back-button" onClick={() => window.history.back()}>←</button>
           <div>
-            <h1>ArthBot</h1>
-            <p>AI Financial Advisor</p>
+            <h1>{t(translations.chat.title)}</h1>
+            <p>{t(translations.chat.subtitle)}</p>
           </div>
+          {speechSupported && (
+            <button
+              type="button"
+              className={`speaker-toggle-btn ${autoSpeak ? 'active' : ''}`}
+              onClick={() => setAutoSpeak(!autoSpeak)}
+              title={autoSpeak ? 'Auto-speak ON' : 'Auto-speak OFF'}
+            >
+              {autoSpeak ? '🔊' : '🔇'}
+            </button>
+          )}
         </header>
 
         <div className="assistant-card">
           <div className="assistant-avatar">🤖</div>
           <div>
-            <div className="assistant-title">ArthBot</div>
-            <div className="assistant-tag">Online • हिंदी</div>
+            <div className="assistant-title">{t(translations.chat.title)}</div>
+            <div className="assistant-tag">{t(translations.chat.online)} • {language === 'hi' ? 'हिंदी' : 'English'}</div>
           </div>
         </div>
 
         <div className="quick-asks">
-          <div className="quick-label">जल्दी पूछें / Quick Ask</div>
+          <div className="quick-label">{t(translations.chat.quickAsk)}</div>
           <div className="quick-list">
             {quickPrompts.map((prompt) => (
               <button
@@ -111,7 +157,25 @@ export default function Chat() {
               key={message.id}
               className={`chat-message ${message.role === 'assistant' ? 'assistant' : 'user'}`}
             >
-              <div className="message-bubble">{message.text}</div>
+              <div className="message-bubble">
+                {message.text}
+                {message.role === 'assistant' && message.ragUsed && (
+                  <div className="rag-badge" title={`Sources: ${message.sources?.join(', ')}`}>
+                    📚 Knowledge Base
+                  </div>
+                )}
+                {message.role === 'assistant' && speechSupported && (
+                  <button
+                    type="button"
+                    className="speak-button"
+                    onClick={() => speak(message.text, language === 'hi' ? 'hi-IN' : 'en-US')}
+                    disabled={speaking}
+                    title="Read aloud"
+                  >
+                    {speaking ? '⏸️' : '🔊'}
+                  </button>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -123,18 +187,18 @@ export default function Chat() {
             value={input}
             onChange={(event) => setInput(event.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="हिंदी में लिखें... / Type here..."
+            placeholder={t(translations.chat.placeholder)}
             rows={2}
           />
           <div className="controls-row">
-            <VoiceInput onResult={handleResult} />
+            <VoiceInput onResult={handleResult} language={language} />
             <button
               type="button"
               className="primary-button"
               onClick={() => handleSend()}
               disabled={sending || !input.trim()}
             >
-              {sending ? 'Sending…' : 'Send'}
+              {sending ? t(translations.chat.sending) : t(translations.chat.send)}
             </button>
           </div>
         </div>
