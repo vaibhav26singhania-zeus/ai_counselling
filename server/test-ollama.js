@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const OLLAMA_API = process.env.OLLAMA_API || 'http://localhost:11434';
-const MODEL_NAME = process.env.MODEL_NAME || 'qwen3.5:1b';
+const MODEL_NAME = process.env.MODEL_NAME || 'llama3.2:1b';
 
 async function testOllama() {
   console.log('Testing Ollama connection...\n');
@@ -20,11 +20,11 @@ async function testOllama() {
     const models = healthCheck.data.models || [];
     console.log('Available models:', models.map(m => m.name).join(', '));
     
-    const hasQwen = models.some(m => m.name.includes('qwen'));
+    const hasQwen = models.some(m => m.name.includes('llama'));
     if (hasQwen) {
-      console.log('✓ Qwen model found');
+      console.log('✓ llama model found');
     } else {
-      console.log('⚠ Qwen model not found. Run: ollama pull qwen2.5:1.5b');
+      console.log('⚠  llama model not found. Run: ollama pull llama3.2:1b');
     }
     
     // Test 3: Try generating a response
