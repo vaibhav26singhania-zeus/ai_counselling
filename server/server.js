@@ -164,8 +164,22 @@ app.post('/chat', authenticateToken, async (req, res) => {
     
     // System prompt for financial advisor with language preference
     const systemPrompt = language === 'hi' 
-      ? `आप ArthBot हैं, एक सहायक AI वित्तीय सलाहकार। आप बचत, निवेश, ऋण और वित्तीय योजना पर सलाह देते हैं। हिंदी में जवाब दें। संक्षिप्त और सहायक जवाब दें।`
-      : `You are ArthBot, a helpful AI financial advisor. You provide advice on savings, investments, loans, and financial planning. Respond in English. Keep responses concise and helpful.`;
+      ? `आप ArthBot हैं, एक सहायक AI वित्तीय सलाहकार। आप बचत, निवेश, ऋण और वित्तीय योजना पर सलाह देते हैं। हिंदी में जवाब दें।
+
+महत्वपूर्ण: अपने जवाब को अच्छी तरह से फॉर्मेट करें:
+- मुख्य विषयों के लिए ## का उपयोग करें
+- उप-विषयों के लिए ### का उपयोग करें
+- महत्वपूर्ण बिंदुओं को **बोल्ड** करें
+- सूचियों के लिए - या 1. का उपयोग करें
+- संक्षिप्त और सहायक जवाब दें`
+      : `You are ArthBot, a helpful AI financial advisor. You provide advice on savings, investments, loans, and financial planning. Respond in English.
+
+Important: Format your responses well:
+- Use ## for main topics
+- Use ### for subtopics
+- Make important points **bold**
+- Use - or 1. for lists
+- Keep responses concise and helpful`;
 
     // Build the full prompt with RAG context
     const fullPrompt = hasContext 

@@ -1,23 +1,51 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { useLanguage } from '../context/LanguageContext'
+import { useChatHistory } from '../context/ChatHistoryContext'
 import { sendChatMessage } from '../services/api'
 import VoiceInput from '../components/VoiceInput'
+import MessageFormatter from '../components/MessageFormatter'
 import { useSpeech } from '../hooks/useSpeech'
 import { translations } from '../utils/translations'
 
 export default function Chat() {
-  const [messages, setMessages] = useState([])
+  const { messages, setMessages, addMessage, clearHistory } = useChatHistory()
   const [input, setInput] = useState('')
   const [sending, setSending] = useState(false)
   const [error, setError] = useState('')
   const [autoSpeak, setAutoSpeak] = useState(true)
+  const [showClearConfirm, setShowClearConfirm] = useState(false)
   const { authToken } = useAuth()
   const { language, t } = useLanguage()
   const { speak, stop, speaking, supported: speechSupported } = useSpeech()
 
-  // Update welcome message when language changes
+  // Initialize with welcome message if empty
   useEffect(() => {
+    if (messages.length === 0) {
+      setMessages([
+        {
+          id: 'welcome',
+          role: 'assistant',
+          text: t(translations.chat.welcome),
+        },
+      ])
+    }
+  }, [language])
+
+  const quickPrompts = translations.quickPrompts[language]
+
+  const appendMessage = (message) => {
+    addMessage(message)
+  }
+
+  const handleClearHistory = () => {
+    setShowClearConfirm(true)
+  }
+
+  const confirmClearHistory = () => {
+    clearHistory()
+    setShowClearConfirm(false)
+    // Add welcome message after clearing
     setMessages([
       {
         id: 'welcome',
@@ -25,12 +53,10 @@ export default function Chat() {
         text: t(translations.chat.welcome),
       },
     ])
-  }, [language])
+  }
 
-  const quickPrompts = translations.quickPrompts[language]
-
-  const appendMessage = (message) => {
-    setMessages((current) => [...current, message])
+  const cancelClearHistory = () => {
+    setShowClearConfirm(false)
   }
 
   const handleSend = async (messageText = input) => {
@@ -115,16 +141,26 @@ export default function Chat() {
             <h1>{t(translations.chat.title)}</h1>
             <p>{t(translations.chat.subtitle)}</p>
           </div>
-          {speechSupported && (
+          <div className="header-actions">
+            {speechSupported && (
+              <button
+                type="button"
+                className={`speaker-toggle-btn ${autoSpeak ? 'active' : ''}`}
+                onClick={() => setAutoSpeak(!autoSpeak)}
+                title={autoSpeak ? 'Auto-speak ON' : 'Auto-speak OFF'}
+              >
+                {autoSpeak ? '🔊' : '🔇'}
+              </button>
+            )}
             <button
               type="button"
-              className={`speaker-toggle-btn ${autoSpeak ? 'active' : ''}`}
-              onClick={() => setAutoSpeak(!autoSpeak)}
-              title={autoSpeak ? 'Auto-speak ON' : 'Auto-speak OFF'}
+              className="clear-history-btn"
+              onClick={handleClearHistory}
+              title={language === 'hi' ? 'इतिहास साफ़ करें' : 'Clear History'}
             >
-              {autoSpeak ? '🔊' : '🔇'}
+              🗑️
             </button>
-          )}
+          </div>
         </header>
 
         <div className="assistant-card">
@@ -158,7 +194,7 @@ export default function Chat() {
               className={`chat-message ${message.role === 'assistant' ? 'assistant' : 'user'}`}
             >
               <div className="message-bubble">
-                {message.text}
+                <MessageFormatter text={message.text} />
                 {message.role === 'assistant' && message.ragUsed && (
                   <div className="rag-badge" title={`Sources: ${message.sources?.join(', ')}`}>
                     📚 Knowledge Base
@@ -181,6 +217,35 @@ export default function Chat() {
         </div>
 
         {error && <div className="error-message">{error}</div>}
+
+        {showClearConfirm && (
+          <div className="confirm-dialog">
+            <div className="confirm-content">
+              <h3>{language === 'hi' ? 'इतिहास साफ़ करें?' : 'Clear History?'}</h3>
+              <p>
+                {language === 'hi' 
+                  ? 'क्या आप सभी चैट संदेशों को हटाना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती।'
+                  : 'Are you sure you want to delete all chat messages? This action cannot be undone.'}
+              </p>
+              <div className="confirm-actions">
+                <button 
+                  type="button" 
+                  className="cancel-button"
+                  onClick={cancelClearHistory}
+                >
+                  {language === 'hi' ? 'रद्द करें' : 'Cancel'}
+                </button>
+                <button 
+                  type="button" 
+                  className="confirm-button"
+                  onClick={confirmClearHistory}
+                >
+                  {language === 'hi' ? 'हटाएं' : 'Delete'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="chat-controls">
           <textarea

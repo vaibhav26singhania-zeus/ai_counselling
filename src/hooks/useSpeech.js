@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { cleanTextForSpeech } from '../utils/textCleaner'
 
 export function useSpeech() {
   const [speaking, setSpeaking] = useState(false)
@@ -16,7 +17,10 @@ export function useSpeech() {
     // Cancel any ongoing speech
     window.speechSynthesis.cancel()
 
-    const utterance = new SpeechSynthesisUtterance(text)
+    // Clean text for speech (remove markdown)
+    const cleanedText = cleanTextForSpeech(text)
+
+    const utterance = new SpeechSynthesisUtterance(cleanedText)
     utterance.lang = lang
     utterance.rate = 0.9
     utterance.pitch = 1
