@@ -2,39 +2,36 @@ import { BrowserRouter, NavLink, Navigate, Route, Routes } from 'react-router-do
 import './App.css'
 import { AuthProvider, useAuth } from './context/AuthContext'
 import { LanguageProvider, useLanguage } from './context/LanguageContext'
+import { ChatHistoryProvider } from './context/ChatHistoryContext'
 import ProtectedLayout from './components/ProtectedLayout'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Chat from './pages/Chat'
-import Home from './pages/Home'
 import Savings from './pages/Savings'
-import Goals from './pages/Goals'
-import Quiz from './pages/Quiz'
 
 function App() {
   return (
     <AuthProvider>
       <LanguageProvider>
-        <BrowserRouter>
-          <div className="app-shell">
-            <Header />
-            <main className="app-main">
-              <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route element={<ProtectedLayout />}>
-                  <Route path="/dashboard" element={<Home />} />
-                  <Route path="/savings" element={<Savings />} />
-                  <Route path="/goals" element={<Goals />} />
-                  <Route path="/quiz" element={<Quiz />} />
-                  <Route path="/chat" element={<Chat />} />
-                  <Route path="/" element={<Navigate to="/dashboard" replace />} />
-                </Route>
-                <Route path="*" element={<Navigate to="/login" replace />} />
-              </Routes>
-            </main>
-          </div>
-        </BrowserRouter>
+        <ChatHistoryProvider>
+          <BrowserRouter>
+            <div className="app-shell">
+              <Header />
+              <main className="app-main">
+                <Routes>
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<Signup />} />
+                  <Route element={<ProtectedLayout />}>
+                    <Route path="/savings" element={<Savings />} />
+                    <Route path="/chat" element={<Chat />} />
+                    <Route path="/" element={<Navigate to="/savings" replace />} />
+                  </Route>
+                  <Route path="*" element={<Navigate to="/login" replace />} />
+                </Routes>
+              </main>
+            </div>
+          </BrowserRouter>
+        </ChatHistoryProvider>
       </LanguageProvider>
     </AuthProvider>
   )

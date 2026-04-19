@@ -21,7 +21,7 @@ export default function Signup() {
 
     try {
       await auth.signup(email, password, name)
-      navigate('/dashboard', { replace: true })
+      navigate('/savings', { replace: true })
     } catch (err) {
       setError(err.message || 'Signup failed. Please try again.')
     } finally {

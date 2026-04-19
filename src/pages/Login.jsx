@@ -20,7 +20,7 @@ export default function Login() {
 
     try {
       await auth.login(email, password)
-      navigate('/dashboard', { replace: true })
+      navigate('/savings', { replace: true })
     } catch (err) {
       setError(t(translations.login.error))
     } finally {
