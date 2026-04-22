@@ -7,7 +7,6 @@ The chatbot now has a complete authentication system with:
 - ✅ User login (signin)
 - ✅ JWT token-based authentication
 - ✅ Bcrypt password hashing
-- ✅ JSON file-based database
 - ✅ Protected routes
 - ✅ User preferences storage
 
