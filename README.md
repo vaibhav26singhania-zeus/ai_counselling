@@ -28,7 +28,7 @@ A mobile-first financial advisory chatbot powered by local Qwen 3.5:1b LLM with 
 ### Backend
 - Node.js + Express
 - Ollama (Local LLM runtime)
-- Qwen 3.5:1b model
+- llama3.5:1b model
 - RAG system with financial knowledge base
 
 ## Quick Start
@@ -45,8 +45,8 @@ A mobile-first financial advisory chatbot powered by local Qwen 3.5:1b LLM with 
 # macOS: brew install ollama
 # Linux: curl -fsSL https://ollama.com/install.sh | sh
 
-# 2. Pull Qwen model
-ollama pull qwen3.5:1b
+# 2. Pull llama model
+ollama pull llama3.5:1b
 
 # 3. Install dependencies
 npm install
@@ -106,7 +106,7 @@ npm run dev
 ```env
 PORT=4000
 OLLAMA_API=http://localhost:11434
-MODEL_NAME=qwen3.5:1b
+MODEL_NAME=llama3.5:1b
 ```
 
 ### Frontend (.env in root)
@@ -119,7 +119,7 @@ VITE_API_BASE_URL=http://localhost:4000
 ### Change LLM Model
 Edit `server/server.js`:
 ```javascript
-const MODEL_NAME = 'qwen2.5:3b'; // Use larger model
+const MODEL_NAME = 'llama3.5:3b'; // Use larger model
 ```
 
 ### Adjust AI Behavior
@@ -152,7 +152,7 @@ See [SETUP.md](SETUP.md) for detailed troubleshooting guide.
 
 Common issues:
 - **Ollama not running**: Run `ollama serve`
-- **Model not found**: Run `ollama pull qwen3.5:1b`
+- **Model not found**: Run `ollama pull llama3.5:1b`
 - **Voice not working**: Use Chrome/Edge, allow microphone permissions
 
 ## License
@@ -162,4 +162,4 @@ MIT
 ## Credits
 
 Built with React + Vite
-Powered by Ollama and Qwen LLM
+Powered by Ollama and llama LLM
