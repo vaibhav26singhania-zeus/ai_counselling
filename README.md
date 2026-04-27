@@ -116,7 +116,7 @@ MODEL_NAME=llama3.5:1b
 ### Change LLM Model
 Edit `server/server.js`:
 ```javascript
-const MODEL_NAME = 'qwen2.5:3b'; // Use larger model
+const MODEL_NAME = 'llama3.5:3b'; // Use larger model
 ```
 
 ### Adjust AI Behavior
@@ -149,7 +149,7 @@ See [SETUP.md](SETUP.md) for detailed troubleshooting guide.
 
 Common issues:
 - **Ollama not running**: Run `ollama serve`
-- **Model not found**: Run `ollama pull qwen3.5:1b`
+- **Model not found**: Run `ollama pull llama3.5:1b`
 - **Voice not working**: Use Chrome/Edge, allow microphone permissions
 
 ## License
