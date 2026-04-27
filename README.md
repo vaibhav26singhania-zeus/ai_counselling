@@ -1,6 +1,6 @@
 # AI Counselling Chatbot 🤖
 
-A mobile-first financial advisory chatbot powered by local Qwen 3.5:1b LLM with voice input and output capabilities.
+A mobile-first financial advisory chatbot powered by local llama3.5:1b LLM with voice input and output capabilities.
 
 ## Features
 
@@ -28,7 +28,7 @@ A mobile-first financial advisory chatbot powered by local Qwen 3.5:1b LLM with 
 ### Backend
 - Node.js + Express
 - Ollama (Local LLM runtime)
-- llama3.5:1b model
+- llama 3.5:1b model
 - RAG system with financial knowledge base
 
 ## Quick Start
@@ -45,7 +45,7 @@ A mobile-first financial advisory chatbot powered by local Qwen 3.5:1b LLM with 
 # macOS: brew install ollama
 # Linux: curl -fsSL https://ollama.com/install.sh | sh
 
-# 2. Pull llama model
+# 2. Pull Qwen model
 ollama pull llama3.5:1b
 
 # 3. Install dependencies
@@ -109,9 +109,6 @@ OLLAMA_API=http://localhost:11434
 MODEL_NAME=llama3.5:1b
 ```
 
-### Frontend (.env in root)
-```env
-VITE_API_BASE_URL=http://localhost:4000
 ```
 
 ## Customization

@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 4000;
 
 // Ollama API endpoint (default local installation)
 const OLLAMA_API = process.env.OLLAMA_API || 'http://localhost:11434';
-const MODEL_NAME = process.env.MODEL_NAME || 'qwen3.5:1b'; // Change to 'llama3.2:1b' if qwen not available
+const MODEL_NAME = process.env.MODEL_NAME || 'llama3.2:1b'; // Change to 'llama3.2:1b' if qwen not available
 
 app.use(cors());
 app.use(express.json());
